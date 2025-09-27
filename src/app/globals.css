@@ -3,18 +3,34 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  /* messageline palette */
+  --color-messageline-blue: #3A80BA;
+  --color-messageline-blue-light: #E6F0FA;
+  --color-messageline-green: #58A55C;
+  --color-messageline-orange: #F4A261;
+  --color-messageline-gray-light: #F5F5F5;
+  --color-messageline-gray-dark: #333333;
 }
 
-/* Add a color to the active/current link */
+/* Active link style */
 .topnav a.active {
   background-color: white;
-  border: black;
+  border: 1px solid black; /* fixed */
   color: black;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+
+  --color-messageline-blue: var(--color-messageline-blue);
+  --color-messageline-blue-light: var(--color-messageline-blue-light);
+  --color-messageline-green: var(--color-messageline-green);
+  --color-messageline-orange: var(--color-messageline-orange);
+  --color-messageline-gray-light: var(--color-messageline-gray-light);
+  --color-messageline-gray-dark: var(--color-messageline-gray-dark);
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }

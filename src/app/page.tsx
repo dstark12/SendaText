@@ -1,41 +1,33 @@
 import React from "react";
-import Image from "next/image";
-import { listings } from "@/data/listings";
-import ListingCard from "@/components/cards";
+
 import NavBar from "@/components/navbar";
 import BottomLinks from "@/components/bottomLinks";
-import SearchBar from "@/components/searchBar";
+import GetStarted from "@/components/getStarted";
 
 export default function Home() {
   return (
     <div>
-      <NavBar/>
+      <NavBar />
 
-      <div className="relative w-full h-[500px]">
-        <Image
-          src="/home.jpg"
-          alt="Marketplace"
-          fill
-          className="object-cover"
-        />
-        
-        {/* Overlay content */}
-        <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/60 ">
-          <h1 className="text-white text-3xl font-bold">Welcome to CommonGround</h1>
-          <SearchBar/>
+      <div className="flex flex-col md:flex-row justify-between px-12 py-12 bg-messageline-blue-light">
+        {/* Left side - Hero text */}
+        <div className="max-w-xl">
+          <h1 className="text-5xl font-extrabold mb-4">
+            Reach your customers instantly with text.
+          </h1>
+          <p className="text-xl font-bold italic text-gray-700">
+            Send reminders, specials, and updates — all by text, no tech skills required.
+          </p>
+        </div>
+
+        {/* Right side - Get Started form */}
+        <div className="mt-8 md:mt-0 md:ml-12 w-full max-w-sm">
+          <GetStarted />
         </div>
       </div>
-        
-      <div className="bg-black">
-      <h1 className="text-white text-3xl font-mono font-extrabold ml-8 p-4">Listings near me 📍</h1>
 
-      <div className="flex flex-wrap gap-6 justify-center p-8">
-        {listings.map((listing) => (
-        <ListingCard key={listing.id} {...listing} />
-        ))}
-       </div>
-      </div>
-    <BottomLinks/>
+
+      <BottomLinks />
     </div>
   );
 }

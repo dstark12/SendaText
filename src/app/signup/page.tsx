@@ -2,35 +2,51 @@ import React from "react";
 import NavBar from "@/components/navbar";
 import BottomLinks from "@/components/bottomLinks";
 
-export default function Contact() {
+export default function SignUp() {
   return (
     <div className="flex flex-col min-h-screen">
       <NavBar />
 
-      {/* Contact Form */}
+      {/* Centered signup card */}
       <div className="p-4 flex flex-1 justify-center items-center bg-messageline-blue-light px-4">
-        <div className="bg-white rounded-2xl shadow-lg w-full max-w-lg p-8">
+        <div className="bg-white rounded-2xl shadow-lg w-full max-w-md p-8">
           <h1 className="text-3xl font-extrabold text-messageline-blue mb-2 text-center">
-            Contact Us
+            Create Account
           </h1>
           <p className="text-gray-600 mb-8 text-center">
-            Have questions? Send us a message and we’ll get back to you soon.
+            Join messageline and start reaching your customers instantly
           </p>
 
           <form className="space-y-6">
-            {/* Name */}
+            {/* First Name */}
             <div>
               <label
-                htmlFor="name"
+                htmlFor="firstName"
                 className="block text-left text-gray-700 font-medium mb-1"
               >
-                Name
+                First Name
               </label>
               <input
                 type="text"
-                id="name"
+                id="firstName"
                 className="w-full border-2 border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-messageline-blue"
-                placeholder="Enter your name"
+                placeholder="Enter your first name"
+              />
+            </div>
+
+            {/* Last Name */}
+            <div>
+              <label
+                htmlFor="lastName"
+                className="block text-left text-gray-700 font-medium mb-1"
+              >
+                Last Name
+              </label>
+              <input
+                type="text"
+                id="lastName"
+                className="w-full border-2 border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-messageline-blue"
+                placeholder="Enter your last name"
               />
             </div>
 
@@ -50,30 +66,38 @@ export default function Contact() {
               />
             </div>
 
-            {/* Message */}
+            {/* Password */}
             <div>
               <label
-                htmlFor="message"
+                htmlFor="password"
                 className="block text-left text-gray-700 font-medium mb-1"
               >
-                Message
+                Password
               </label>
-              <textarea
-                id="message"
-                rows={5}
+              <input
+                type="password"
+                id="password"
                 className="w-full border-2 border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-messageline-blue"
-                placeholder="Write your message..."
-              ></textarea>
+                placeholder="Enter your password"
+              />
             </div>
 
-            {/* Submit */}
+            {/* Sign Up Button */}
             <button
               type="submit"
               className="w-full bg-messageline-green hover:bg-messageline-orange text-white font-semibold py-3 rounded transition"
             >
-              Send Message
+              Sign Up
             </button>
           </form>
+
+          {/* Already have account */}
+          <div className="flex justify-center items-center gap-2 mt-6 text-gray-700">
+            <p>Already have an account?</p>
+            <a href="/login" className="font-bold text-messageline-blue hover:underline">
+              Log In
+            </a>
+          </div>
         </div>
       </div>
 
